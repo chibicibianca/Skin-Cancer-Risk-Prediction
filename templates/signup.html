@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Skin Cancer Risk Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="static/login/css/style.css">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/assets/img/favicon/site.webmanifest">
+
+
+	</head>
+	<body class="img" style="background-image: url('static/profile/bg.jpg');">
+<hr>
+	 <nav id="navbar" class="navbar">
+
+        <ul>
+            <li><a class="nav-link right"  href="{{ url_for('index') }}"><strong>Pagina principală</strong></a></li>
+
+        </ul>
+    </nav>
+	<section class="ftco-section">
+		<div class="container" >
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4" style="text-align: center !important;">Înregistrare</h3>
+						{% with messages = get_flashed_messages() %}
+        				{% if messages %}
+            			<div class="notification is-danger">
+                			{{ messages[0] }}  Mergeți la pagina de <a href="{{ url_for('login') }}">login!</a>
+                        </div>
+        				{% endif %}
+        				{% endwith %}
+		      	<form method="POST" action="/signup">
+		      		<div class="form-group">Email
+		      			<input type="email" class="form-control" name="email" placeholder="Email" autofocus="" required>
+		      		</div>
+	            <div class="form-group">Parola
+	              <input id="password-field" type="password" name="password" class="form-control" placeholder="Parola" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+					<div class="form-group">Prenumele
+	              <input type="text" name="first_name" class="form-control" placeholder="Prenumele" autofocus="">
+	            </div>
+
+                    <div class="form-group">Numele de familie
+	              <input type="text" name="last_name" class="form-control" placeholder="Numele de familie" autofocus="">
+	            </div>
+
+                    <div class="form-group">Varsta
+	              <input type="number" name="age" class="form-control" placeholder="Varsta" autofocus="">
+	            </div>
+
+                    <div class="form-group">Male/Female
+	              <input type="text" name="sex" class="form-control" placeholder="Male/Female" autofocus="">
+	            </div>
+
+                    <div class="form-group">Înălțime(cm)
+	              <input type="number" name="height" class="form-control" placeholder="înălțime(cm)" autofocus="">
+	            </div>
+
+                    <div class="form-group">Greutate(kg)
+	              <input type="number" name="weight" class="form-control" placeholder="Greutate(kg)" autofocus="">
+	            </div>
+
+                    <div class="form-group">Număr de telefon
+	              <input type="tel" name="phone" class="form-control" placeholder="Numar de telefon" autofocus="">
+	            </div>
+
+                    <div class="form-group">Medicamente
+	              <input type="text" name="medication" class="form-control" placeholder="Medicamente" autofocus="">
+	            </div>
+
+                    <div class="form-group">Alergii
+	              <input type="text" name="allergy" class="form-control" placeholder="Alergii" autofocus="">
+	            </div>
+
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Înregistrare</button>
+	            </div>
+	          </form>
+	          <p class="w-100 text-center">&mdash; Sunteți deja înregistrat? &mdash;</p>
+	          <div class="social d-flex text-center">
+	          	<a href="{{ url_for('login') }}" class="form-control btn btn-primary submit px-3" style="text-align: center !important;">Log in</a>
+	          </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+</hr>
+	</body>
+</html>
+

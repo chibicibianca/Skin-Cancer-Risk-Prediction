@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Skin Cancer Risk Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="static/login/css/style.css">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="static/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/assets/img/favicon/site.webmanifest">
+
+
+	</head>
+<body class="img js-fullheight" style="background-image: url('static/profile/bg.jpg');">
+	<nav id="navbar" class="navbar">
+
+        <ul>
+			<li><a class="nav-link" style="font-size: 30px;" href="{{ url_for('index') }}">Pagina principală</a></li>
+
+        </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+	<section class="ftco-section" >
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+				</div>
+			</div>
+			<div class="row justify-content-center" >
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">Login</h3>
+						{% with messages = get_flashed_messages() %}
+        				{% if messages %}
+            			<div class="w3-panel w3-green">
+                			{{ messages[0] }}
+            			</div>
+        				{% endif %}
+        				{% endwith %}
+		      	<form method="POST" action="/login">
+		      		<div class="form-group">
+						Email
+		      			<input type="email" class="form-control" name="email" placeholder="Email" autofocus="" required style="transparent;">
+		      		</div>
+	            <div class="form-group">Parola
+	              <input id="password-field" type="password" name="password" class="form-control" placeholder="Parola" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Log in</button>
+	            </div>
+	            <div class="form-group d-md-flex">
+	            	<div class="w-50">
+		            	<label class="checkbox-wrap checkbox-primary" style="color: #000000">Reține contul
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+									</label>
+								</div>
+	            </div>
+	          </form>
+	          <p class="w-100 text-center">&mdash; Nu aveți cont? Înregistrați-vă aici &mdash;</p>
+	          <div class="social d-flex text-center">
+	          	<a href="{{ url_for('signup') }}" class="form-control btn btn-primary submit px-3" style="text-align: center !important;">Înregistrare</a>
+	          </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	</body>
+</html>
+
